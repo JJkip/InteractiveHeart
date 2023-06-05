@@ -19,6 +19,9 @@ struct ContentView: View {
             .onTapGesture {
                 self.colorChange.toggle()
             }
+            .onLongPressGesture {
+                self.sizeChange.toggle()
+            }
     }
 }
 
