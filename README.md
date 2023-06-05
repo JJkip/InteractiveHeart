@@ -1,5 +1,5 @@
 
-# Interactive Heart ![swiftui-96x96](https://github.com/JJkip/InteractiveHeart/assets/2306651/f37c2671-a103-4a38-9d2a-30534c6cf863)
+# Interactive Heart ![swiftui-32x32](https://github.com/JJkip/InteractiveHeart/assets/2306651/0f23f50d-7c4b-440e-9385-b70106291b80)
 
 Implementation of an interactive heart using SwiftUI. The heart shape is created using the "heart.fill" system image. The color of the heart can be toggled between yellow and red by tapping on it, and its size can be changed by long-pressing on it.
 
@@ -71,7 +71,7 @@ You can copy and paste this code into a new SwiftUI project to see the interacti
 
 ## Tech Stack
 
-**iOS:** Swift UI
+**iOS:** Swift UI ![swiftui-32x32](https://github.com/JJkip/InteractiveHeart/assets/2306651/0f23f50d-7c4b-440e-9385-b70106291b80)
 
 
 
