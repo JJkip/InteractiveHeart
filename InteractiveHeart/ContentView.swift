@@ -10,12 +10,31 @@ import SwiftUI
 struct ContentView: View {
     @State private var colorChange = false
     @State private var sizeChange = false
+    @State private var animationAmount = 1.0
     var body: some View {
         Image(systemName: "heart.fill")
-            .font(.system(size: 200))
+            .font(.system(size: 100))
             .foregroundColor(colorChange ? .yellow : .red)
+            .overlay(
+                Circle()
+                    .stroke(.red)
+                    .scaleEffect(animationAmount)
+                    .opacity(2 - animationAmount)
+                    .animation(
+                        .easeInOut(duration: 1)
+                        .repeatForever(autoreverses: false),
+                        value: animationAmount
+                    )
+            )
+            .onAppear {
+                animationAmount = 2
+            }
             .scaleEffect(sizeChange ? 1.5 : 1)
-            .animation(.default)
+            .animation(
+                .easeInOut(duration:1)
+                .repeatForever(autoreverses: true),
+                value: animationAmount)
+//            .animation(.interpolatingSpring(stiffness: 50, damping:1), value: animationAmount)
             .onTapGesture {
                 self.colorChange.toggle()
             }
