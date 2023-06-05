@@ -16,16 +16,27 @@ struct ContentView: View {
             .font(.system(size: 100))
             .foregroundColor(colorChange ? .yellow : .red)
             .overlay(
-                Circle()
-                    .stroke(.red)
+                Image(systemName: "heart.fill")
+                    .font(.system(size: 100))
+                    .foregroundColor(.red)
                     .scaleEffect(animationAmount)
                     .opacity(2 - animationAmount)
                     .animation(
                         .easeInOut(duration: 1)
                         .repeatForever(autoreverses: false),
-                        value: animationAmount
-                    )
+                        value: animationAmount)
             )
+//            .overlay(
+//                Circle()
+//                    .stroke(.red)
+//                    .scaleEffect(animationAmount)
+//                    .opacity(2 - animationAmount)
+//                    .animation(
+//                        .easeInOut(duration: 1)
+//                        .repeatForever(autoreverses: false),
+//                        value: animationAmount
+//                    )
+//            )
             .onAppear {
                 animationAmount = 2
             }
@@ -34,7 +45,6 @@ struct ContentView: View {
                 .easeInOut(duration:1)
                 .repeatForever(autoreverses: true),
                 value: animationAmount)
-//            .animation(.interpolatingSpring(stiffness: 50, damping:1), value: animationAmount)
             .onTapGesture {
                 self.colorChange.toggle()
             }
